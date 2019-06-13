@@ -1,0 +1,6 @@
+FROM alpine
+RUN apk add --no-cache lighttpd
+WORKDIR /var/www/localhost/htdocs/
+ADD index-openfaas.html index.html
+ADD images/openfaas.png images/openfaas.png
+CMD ["lighttpd", "-f", "/etc/lighttpd/lighttpd.conf", "-D"] 

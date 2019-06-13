@@ -1,0 +1,7 @@
+FROM alpine
+RUN apk add --no-cache lighttpd
+WORKDIR /var/www/localhost/htdocs/
+ADD lighttpd.conf /etc/lighttpd/lighttpd.conf 
+ADD index-rio.html index.html
+ADD images/rio.png images/rio.png
+CMD ["lighttpd", "-f", "/etc/lighttpd/lighttpd.conf", "-D"] 

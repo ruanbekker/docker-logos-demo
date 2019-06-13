@@ -1,0 +1,6 @@
+FROM alpine
+RUN apk add --no-cache lighttpd
+WORKDIR /var/www/localhost/htdocs/
+ADD index-golang.html index.html
+ADD images/golang.png images/golang.png
+CMD ["lighttpd", "-f", "/etc/lighttpd/lighttpd.conf", "-D"] 

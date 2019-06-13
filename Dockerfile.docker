@@ -1,0 +1,6 @@
+FROM alpine
+RUN apk add --no-cache lighttpd
+WORKDIR /var/www/localhost/htdocs/
+ADD index-docker.html index.html
+ADD images/docker.png images/docker.png
+CMD ["lighttpd", "-f", "/etc/lighttpd/lighttpd.conf", "-D"] 

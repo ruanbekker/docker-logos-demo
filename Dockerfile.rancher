@@ -1,0 +1,6 @@
+FROM alpine
+RUN apk add --no-cache lighttpd
+WORKDIR /var/www/localhost/htdocs/
+ADD index-rancher.html index.html
+ADD images/rancher.png images/rancher.png
+CMD ["lighttpd", "-f", "/etc/lighttpd/lighttpd.conf", "-D"] 
